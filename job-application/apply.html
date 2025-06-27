@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Job Application</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<form action="submit_application.php" method="POST" enctype="multipart/form-data">
+  <h2>🚀 Apply for a Job</h2>
+
+  <div class="form-group">
+    <input type="text" name="fullname" placeholder=" " required>
+    <label>Full Name</label>
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" placeholder=" " required>
+    <label>Email</label>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="phone" placeholder=" " required>
+    <label>Phone Number</label>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="linkedin" placeholder=" ">
+    <label>LinkedIn Profile</label>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="website" placeholder=" ">
+    <label>Portfolio/Website</label>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="position" placeholder=" " required>
+    <label>Position Applying For</label>
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" rows="4" placeholder=" " required></textarea>
+    <label>Why are you a good fit?</label>
+  </div>
+
+  <div class="form-group">
+    <input class="file-input" type="file" name="resume" accept=".pdf,.doc,.docx" required>
+  </div>
+
+  <button type="submit" class="submit-btn">Submit Application</button>
+</form>
+
+</body>
+</html>

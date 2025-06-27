@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Login Form -->
+    <div class="form-box" id="loginBox">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-box">
+          <input type="text" required />
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="switch">
+          <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-box" id="signupBox" style="display:none;">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <div class="input-box">
+          <input type="text" required />
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type=" Phone" required />
+          <label>Phone</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+        <div class="switch">
+          <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+ <script>
+  function showSignup() {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("signupBox").style.display = "block";
+  }
+
+  function showLogin() {
+    document.getElementById("signupBox").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
+  }
+
+  // Handle signup form (stay on page, simulate success)
+  document.getElementById("signupForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Signup successful! Please login.");
+    showLogin();
+  });
+
+  // ✅ Handle login form with required field validation
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = this.querySelector('input[type="text"]').value.trim();
+    const password = this.querySelector('input[type="password"]').value.trim();
+
+    if (username === "" || password === "") {
+      alert("Please fill in both username and password.");
+    } else {
+      // ✅ Redirect if both fields are filled
+      window.location.href = "../index.html";
+    }
+  });
+</script>
+
+</body>
+</html>
